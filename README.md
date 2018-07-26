@@ -17,14 +17,16 @@ solutions.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/terraform-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/terraform-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/terraform-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/terraform-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/terraform-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/terraform-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/terraform-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/terraform-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/terraform-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/terraform-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/terraform-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/terraform-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/terraform/badges/version.svg)](https://anaconda.org/conda-forge/terraform)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/terraform/badges/downloads.svg)](https://anaconda.org/conda-forge/terraform)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-terraform-green.svg)](https://anaconda.org/conda-forge/terraform) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/terraform.svg)](https://anaconda.org/conda-forge/terraform) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/terraform.svg)](https://anaconda.org/conda-forge/terraform) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/terraform.svg)](https://anaconda.org/conda-forge/terraform) |
 
 Installing terraform
 ====================
