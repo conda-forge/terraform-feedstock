@@ -21,14 +21,15 @@ source:
   sha256: {{ sha256_win64 }}  # [win64]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - make  # [not win]
+    - {{ compiler('c') }}
+  host:
     - go 1.9.*  # [not win]
     - git  # [not win]
-    - make  # [not win]
-    - toolchain  # [not win]
 
 test:
   commands:
@@ -37,10 +38,10 @@ test:
 about:
   home: https://www.terraform.io
   license: MPL 2.0
-  summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently. 
+  summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
   description: |
-     Terraform is a tool for building, changing, and versioning infrastructure safely and 
-     efficiently. Terraform can manage existing and popular service providers as well as custom in-house 
+     Terraform is a tool for building, changing, and versioning infrastructure safely and
+     efficiently. Terraform can manage existing and popular service providers as well as custom in-house
      solutions.
   doc_url: https://www.terraform.io/docs/index.html
 
