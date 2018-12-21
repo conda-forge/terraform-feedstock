@@ -6,13 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-  fn: {{ name }}-{{ version }}.tar.gz  # [not win]
-  sha256: cf2ecbdc9ea7c5294942f1c633b2871bf2bc620661148bf08546da2d32543784  # [not win]
+  - folder: src/github.com/hashicorp/terraform
+    git_url: https://github.com/hashicorp/terraform.git
+    git_rev: v{{ version }}
 
-  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-  fn: {{ name }}-{{ version }}.zip  # [win]
-  sha256: d2fa6ce1f5019011678593fe1b85578e94e59bf9e89238258aafd803323db668  # [win64]
+    url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
+    sha256: d2fa6ce1f5019011678593fe1b85578e94e59bf9e89238258aafd803323db668  # [win64]
 
 build:
   number: 1000
@@ -20,7 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('go') }}  # [not win]
-    - git  # [not win]
+    - {{ compiler('c') }}  # [not win]
     - make  # [not win]
 
 test:
@@ -36,6 +35,7 @@ about:
      efficiently. Terraform can manage existing and popular service providers as well as custom in-house 
      solutions.
   doc_url: https://www.terraform.io/docs/index.html
+  dev_url: https://github.com/hashicorp/terraform.git
 
 extra:
   recipe-maintainers:
