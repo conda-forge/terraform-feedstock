@@ -1,5 +1,5 @@
 {% set name = "terraform" %}
-{% set version = "0.11.9" %}
+{% set version = "0.11.11" %}
 
 package:
   name: {{ name|lower }}
@@ -11,10 +11,10 @@ source:
     git_rev: v{{ version }}
 
     url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-    sha256: d2fa6ce1f5019011678593fe1b85578e94e59bf9e89238258aafd803323db668  # [win64]
+    sha256: 87252cc67486ef2ff2b8501c0bf9e795a53585b4dc5c09a8aa876c2564f77991  # [win64]
 
 build:
-  number: 1000
+  number: 1001
 
 requirements:
   build:
