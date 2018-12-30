@@ -1,26 +1,27 @@
-{% set name = "terraform" %}
-{% set version = "0.11.11" %}
+{% set goname = "github.com/hashicorp/terraform" %}
+{% set version = "0.11.9" %}
+
+{% set name = goname.split('/')[-1] %}
+{% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  - folder: src/github.com/hashicorp/terraform
-    git_url: https://github.com/hashicorp/terraform.git
+  - folder: {{ pkg_src }}
+    git_url: https://{{ goname }}
     git_rev: v{{ version }}
-
-    url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-    sha256: 87252cc67486ef2ff2b8501c0bf9e795a53585b4dc5c09a8aa876c2564f77991  # [win64]
 
 build:
   number: 1001
+  script:
+    - pushd {{ pkg_src }}
+    - go install -v .
 
 requirements:
   build:
-    - {{ compiler('go') }}  # [not win]
-    - {{ compiler('c') }}  # [not win]
-    - make  # [not win]
+    - {{ compiler('go') }}
 
 test:
   commands:
