@@ -9,12 +9,14 @@ package:
   version: {{ version }}
 
 source:
+  # We must use git here beause the program looks
+  # for the git sha&tag to determine its version
   - folder: {{ pkg_src }}
     git_url: https://{{ goname }}
     git_rev: v{{ version }}
 
 build:
-  number: 1000
+  number: 1001
   script:
     - pushd {{ pkg_src }}
     - go install -v .
@@ -24,8 +26,10 @@ requirements:
     - {{ compiler('go') }}
 
 test:
+  requires:
+    - m2-bash  # [win]
   commands:
-    - {{ name|lower }} -v
+    - bash -c "{{ name|lower }} -v"
 
 about:
   home: https://www.terraform.io
