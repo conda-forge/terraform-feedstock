@@ -9,8 +9,8 @@ package:
   version: {{ version }}
 
 source:
-  # We have to use git here beause the program looks
-  #  for the git sha&tag to determine its version  
+  # We must use git here beause the program looks
+  # for the git sha&tag to determine its version
   - folder: {{ pkg_src }}
     git_url: https://{{ goname }}
     git_rev: v{{ version }}
@@ -29,8 +29,7 @@ test:
   requires:
     - m2-bash  # [win]
   commands:
-    - {{ name|lower }} -v
-    - bash -c "{{ name|lower }} -v"  # [win]
+    - bash -c "{{ name|lower }} -v"
 
 about:
   home: https://www.terraform.io
