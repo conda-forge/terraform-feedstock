@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/terraform" %}
-{% set version = "0.11.11" %}
+{% set version = "0.11.13" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -16,7 +16,7 @@ source:
     git_rev: v{{ version }}
 
 build:
-  number: 1001
+  number: 0
   script:
     - pushd {{ pkg_src }}
     - go install -v .
