@@ -20,6 +20,7 @@ build:
   script:
     - pushd {{ pkg_src }}
     - go install -v .
+  detect_binary_files_with_prefix: False  # [linux]
 
 requirements:
   build:
