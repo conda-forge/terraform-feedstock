@@ -20,9 +20,6 @@ build:
   script:
     - pushd {{ pkg_src }}
     - go install -v .
-  detect_binary_files_with_prefix: False  # [linux]
-  ignore_prefix_files:  # [linux]
-    - bin/terraform  # [linux]
 
 requirements:
   build:
