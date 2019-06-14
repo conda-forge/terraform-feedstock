@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/terraform" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.2" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -36,12 +36,13 @@ about:
   license: MPL 2.0
   summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently. 
   description: |
-     Terraform is a tool for building, changing, and versioning infrastructure safely and 
-     efficiently. Terraform can manage existing and popular service providers as well as custom in-house 
-     solutions.
+    Terraform is a tool for building, changing, and versioning infrastructure safely and 
+    efficiently. Terraform can manage existing and popular service providers as well as custom in-house 
+    solutions.
   doc_url: https://www.terraform.io/docs/index.html
   dev_url: https://github.com/hashicorp/terraform.git
 
 extra:
   recipe-maintainers:
     - sodre
+    - mariusvniekerk
