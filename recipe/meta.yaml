@@ -1,5 +1,5 @@
 {% set goname = "github.com/hashicorp/terraform" %}
-{% set version = "0.12.6" %}
+{% set version = "0.12.7" %}
 
 {% set name = goname.split('/')[-1] %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -13,7 +13,7 @@ source:
   # for the git sha&tag to determine its version
   - folder: {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{version}}.tar.gz
-    sha256: df108a45f5ba2658eed844c3a6647117324c99770e06cbd549b26dd7c20ee623
+    sha256: 1c4b04e219de9325b3c018679004795fd90c4f5148c6249ff43b156e35f58d56
 
 build:
   number: 0
