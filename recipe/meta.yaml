@@ -16,7 +16,7 @@ source:
     sha256: 1253a870ba2c1d9a873f6bfcaa2e4450573fd06177705f0faeb451157e1dde8b
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - go install -v .
