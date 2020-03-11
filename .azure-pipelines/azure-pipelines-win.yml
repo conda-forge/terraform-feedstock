@@ -18,7 +18,7 @@ jobs:
     # TODO: Fast finish on azure pipelines?
     - script: |
         ECHO ON
-        
+
 
     - script: |
         choco install vcpython27 -fdv -y --debug
@@ -58,7 +58,7 @@ jobs:
       inputs:
         packageSpecs: 'python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=2' # Optional
         installOptions: "-c conda-forge"
-        updateConda: false
+        updateConda: true
       displayName: Install conda-build and activate environment
 
     - script: set PYTHONUNBUFFERED=1
@@ -71,7 +71,7 @@ jobs:
         set "CI=azure"
         run_conda_forge_build_setup
       displayName: conda-forge build setup
-    
+
 
     - script: |
         rmdir C:\strawberry /s /q
