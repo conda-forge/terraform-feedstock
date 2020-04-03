@@ -16,7 +16,7 @@ source:
     sha256: 11f547db8893abd10861b153311eb9690013249282ea015a023f1ea1f9146b6d
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd {{ pkg_src }}
     - go install -v .
@@ -33,7 +33,7 @@ test:
 
 about:
   home: https://www.terraform.io
-  license: MPL 2.0
+  license: MPL-2.0
   summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely and 
@@ -47,3 +47,6 @@ extra:
     - sodre
     - mariusvniekerk
     - dhirschfeld
+    - oblute
+    - rluria14
+    - ndmaxar
