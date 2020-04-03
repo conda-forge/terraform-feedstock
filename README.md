@@ -3,7 +3,7 @@ About terraform
 
 Home: https://www.terraform.io
 
-Package license: MPL 2.0
+Package license: MPL-2.0
 
 Feedstock license: BSD 3-Clause
 
@@ -160,5 +160,8 @@ Feedstock Maintainers
 
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
+* [@ndmaxar](https://github.com/ndmaxar/)
+* [@oblute](https://github.com/oblute/)
+* [@rluria14](https://github.com/rluria14/)
 * [@sodre](https://github.com/sodre/)
 
