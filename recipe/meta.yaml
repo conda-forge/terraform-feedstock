@@ -1,35 +1,26 @@
-{% set goname = "github.com/hashicorp/terraform" %}
+{% set name = "terraform" %}
 {% set version = "0.12.24" %}
-
-{% set name = goname.split('/')[-1] %}
-{% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  # We must use git here beause the program looks
-  # for the git sha&tag to determine its version
-  - folder: {{ pkg_src }}
-    url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 11f547db8893abd10861b153311eb9690013249282ea015a023f1ea1f9146b6d
+  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 11f547db8893abd10861b153311eb9690013249282ea015a023f1ea1f9146b6d
 
 build:
-  number: 1
+  number: 2
   script:
-    - pushd {{ pkg_src }}
     - go install -v .
 
 requirements:
   build:
-    - {{ compiler('go') }}
+    - {{ compiler('go') }} 1.13
 
 test:
-  requires:
-    - m2-bash  # [win]
   commands:
-    - bash -c "{{ name|lower }} -v"
+    - terraform -v
 
 about:
   home: https://www.terraform.io
