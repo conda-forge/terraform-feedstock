@@ -5,7 +5,7 @@ Home: https://www.terraform.io
 
 Package license: MPL-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
 
