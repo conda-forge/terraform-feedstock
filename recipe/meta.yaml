@@ -1,5 +1,5 @@
 {% set name = "terraform" %}
-{% set version = "1.0.10" %}
+{% set version = "1.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 53b85c17258c134987ed67b61be10a9b5186aa1a0f1942a57ed21785186cbcd3
+  sha256: c86040599f81202bb09b9f3fc637fdf4fe95cd9dbd6c3b41b366e2cdc5d908dc
 
 build:
   number: 0
