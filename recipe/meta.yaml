@@ -12,8 +12,8 @@ source:
 build:
   number: 0
   script:
-    - go build -v -o $PREFIX/bin/terraform           # [not win]
-    - go build -v -o %LIBRARY_PREFIX%/bin/terraform  # [win]
+    - go build -v -o $PREFIX/bin/terraform  # [not win]
+    - go install -v .                       # [win]
 
 requirements:
   build:
