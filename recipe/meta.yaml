@@ -12,11 +12,12 @@ source:
 build:
   number: 0
   script:
-    - go install -v .
+    - go build -v -o $PREFIX/bin/terraform           # [not win]
+    - go build -v -o %LIBRARY_PREFIX%/bin/terraform  # [win]
 
 requirements:
   build:
-    - {{ compiler('go') }} 1.18
+    - {{ compiler('go') }}
 
 test:
   commands:
