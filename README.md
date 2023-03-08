@@ -1,11 +1,11 @@
-About terraform
-===============
+About terraform-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/terraform-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.terraform.io
 
 Package license: MPL-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/terraform-feedstock/blob/main/LICENSE.txt)
 
 Summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
 
