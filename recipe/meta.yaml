@@ -10,7 +10,7 @@ source:
   sha256: bbdd764589fc9273bcef50c35274738ca1016e8bb47dbd8180781b61eb8e9315
 
 build:
-  number: 0
+  number: 1
   script:
     - go build -v -o $PREFIX/bin/terraform  # [not win]
     - go install -v .                       # [win]
