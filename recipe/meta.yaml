@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   script:
-    - go build -v -o $PREFIX/bin/terraform  # [not win]
+    - go build -v -ldflags "-w -s -X 'github.com/hashicorp/terraform/version.dev=no'" -o $PREFIX/bin/terraform  # [not win]
     - go install -v .                       # [win]
 
 requirements:
