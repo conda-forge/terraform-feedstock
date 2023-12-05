@@ -10,7 +10,7 @@ source:
   sha256: 92f8ac6f120a0b691d9f2a2eba2b13a1aaa72d60a949c557acb21d377dc142c1
 
 build:
-  number: 1
+  number: 2
   script:
     - go build -v -ldflags "-w -s -X 'github.com/hashicorp/terraform/version.dev=no'" -o $PREFIX/bin/terraform  # [not win]
     - go install -v -ldflags "-w -s -X 'github.com/hashicorp/terraform/version.dev=no'" .                       # [win]
@@ -25,7 +25,8 @@ test:
 
 about:
   home: https://www.terraform.io
-  license: MPL-2.0
+  license: BUSL-1.1
+  license_file: LICENSE
   summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely and 
