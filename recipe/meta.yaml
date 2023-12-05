@@ -25,7 +25,7 @@ test:
 
 about:
   home: https://www.terraform.io
-  license: MPL-2.0
+  license: BUSL-1.1
   summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely and 
