@@ -10,10 +10,10 @@ source:
   sha256: 92f8ac6f120a0b691d9f2a2eba2b13a1aaa72d60a949c557acb21d377dc142c1
 
 build:
-  number: 0
+  number: 1
   script:
-    - go build -v -o $PREFIX/bin/terraform  # [not win]
-    - go install -v .                       # [win]
+    - go build -v -ldflags "-w -s -X 'github.com/hashicorp/terraform/version.dev=no'" -o $PREFIX/bin/terraform  # [not win]
+    - go install -v -ldflags "-w -s -X 'github.com/hashicorp/terraform/version.dev=no'" .                       # [win]
 
 requirements:
   build:
