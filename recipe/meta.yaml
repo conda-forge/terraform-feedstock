@@ -6,18 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 6742fc87cba5e064455393cda12f0e0241c85a7cb2a3558d13289380bb5f26f5
+  - url: https://github.com/hashicorp/{{ name }}/archive/v{{ version }}.tar.gz
+    sha256: 6742fc87cba5e064455393cda12f0e0241c85a7cb2a3558d13289380bb5f26f5
+  - url: https://raw.githubusercontent.com/aliyun/aliyun-oss-go-sdk/8a706f887aa919e83aaeee0ef6d2a6d2a0f56af6/LICENSE
+    sha256: 2c10901365cafb8d9cd0258f197bcb21932c16d9faf42aa51c5bd8a8393947fe
+    fn: LICENSE-aliyun-sdk
 
 build:
-  number: 0
+  number: 1
   script:
     - go build -v -o $PREFIX/bin/terraform  # [not win]
     - go install -v .                       # [win]
+    - go-licenses save . --save_path=license-files --ignore github.com/hashicorp/terraform --ignore github.com/aliyun/aliyun-oss-go-sdk
 
 requirements:
   build:
     - {{ compiler('go') }}
+    - go-licenses
 
 test:
   commands:
@@ -26,6 +31,10 @@ test:
 about:
   home: https://www.terraform.io
   license: MPL-2.0
+  license_file:
+    - LICENSE
+    - LICENSE-aliyun-sdk
+    - license-files/
   summary: Terraform is a tool for building, changing, and combining infrastructure safely and efficiently.
   description: |
     Terraform is a tool for building, changing, and versioning infrastructure safely and 
